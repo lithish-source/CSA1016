@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "tabs": [
+    {
+      "id": "main",
+      "name": "main",
+      "type": "main"
+    }
+  ],
+  "selectedTabId": "main",
+  "docsByTab": {
+    "main": {
+      "nodes": {
+        "start": {
+          "id": "start",
+          "type": "Oval",
+          "text": "start",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "input_S5",
+          "selected": false,
+          "running": false
+        },
+        "input_S5": {
+          "id": "input_S5",
+          "type": "Parallelogram",
+          "text": "S",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_n",
+          "selected": false,
+          "running": false,
+          "ioKind": "Input",
+          "prompt": "Enter a string of lowercase letters"
+        },
+        "assign_n": {
+          "id": "assign_n",
+          "type": "Rectangle",
+          "text": "n := Length_Of(S)",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_i1_5",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_i1_5": {
+          "id": "assign_i1_5",
+          "type": "Rectangle",
+          "text": "i := 1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_found0",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_found0": {
+          "id": "assign_found0",
+          "type": "Rectangle",
+          "text": "found := 0",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_target_empty",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_target_empty": {
+          "id": "assign_target_empty",
+          "type": "Rectangle",
+          "text": "target := \"\"",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_find_loop",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_find_loop": {
+          "id": "diamond_find_loop",
+          "type": "Diamond",
+          "text": "i <= n AND found = 0",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_ch1",
+          "falseSuccessorId": "diamond_allA"
+        },
+        "assign_ch1": {
+          "id": "assign_ch1",
+          "type": "Rectangle",
+          "text": "ch := Sub_String(S, i, 1)",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_ch_not_a",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_ch_not_a": {
+          "id": "diamond_ch_not_a",
+          "type": "Diamond",
+          "text": "ch <> \"a\"",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_set_target",
+          "falseSuccessorId": "assign_i_inc5"
+        },
+        "assign_set_target": {
+          "id": "assign_set_target",
+          "type": "Rectangle",
+          "text": "target := ch\nfound := 1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_i_inc5",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_i_inc5": {
+          "id": "assign_i_inc5",
+          "type": "Rectangle",
+          "text": "i := i + 1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_find_loop",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_allA": {
+          "id": "diamond_allA",
+          "type": "Diamond",
+          "text": "found = 0",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_result_same",
+          "falseSuccessorId": "assign_result_empty"
+        },
+        "assign_result_same": {
+          "id": "assign_result_same",
+          "type": "Rectangle",
+          "text": "result := S",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "output_result",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_result_empty": {
+          "id": "assign_result_empty",
+          "type": "Rectangle",
+          "text": "result := \"\"",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_j1",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_j1": {
+          "id": "assign_j1",
+          "type": "Rectangle",
+          "text": "j := 1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_build_loop",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_build_loop": {
+          "id": "diamond_build_loop",
+          "type": "Diamond",
+          "text": "j <= n",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_ch2",
+          "falseSuccessorId": "output_result"
+        },
+        "assign_ch2": {
+          "id": "assign_ch2",
+          "type": "Rectangle",
+          "text": "ch := Sub_String(S, j, 1)",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_ch_eq_target",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_ch_eq_target": {
+          "id": "diamond_ch_eq_target",
+          "type": "Diamond",
+          "text": "ch = target",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_app_a",
+          "falseSuccessorId": "diamond_ch_eq_a"
+        },
+        "assign_app_a": {
+          "id": "assign_app_a",
+          "type": "Rectangle",
+          "text": "result := result + \"a\"",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_j_inc",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "diamond_ch_eq_a": {
+          "id": "diamond_ch_eq_a",
+          "type": "Diamond",
+          "text": "ch = \"a\"",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "selected": false,
+          "running": false,
+          "kind": "Selection",
+          "trueSuccessorId": "assign_app_target",
+          "falseSuccessorId": "assign_app_ch"
+        },
+        "assign_app_target": {
+          "id": "assign_app_target",
+          "type": "Rectangle",
+          "text": "result := result + target",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_j_inc",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_app_ch": {
+          "id": "assign_app_ch",
+          "type": "Rectangle",
+          "text": "result := result + ch",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_j_inc",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "assign_j_inc": {
+          "id": "assign_j_inc",
+          "type": "Rectangle",
+          "text": "j := j + 1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "diamond_build_loop",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "output_result": {
+          "id": "output_result",
+          "type": "Parallelogram",
+          "text": "result",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "end",
+          "selected": false,
+          "running": false,
+          "ioKind": "Output",
+          "newLine": true
+        },
+        "end": {
+          "id": "end",
+          "type": "Oval",
+          "text": "end",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": null,
+          "selected": false,
+          "running": false
+        }
+      },
+      "startId": "start",
+      "endId": "end"
+    }
+  }
+}

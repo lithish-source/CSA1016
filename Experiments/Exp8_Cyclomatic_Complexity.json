@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "tabs": [
+    {
+      "id": "main",
+      "name": "main",
+      "type": "main"
+    }
+  ],
+  "selectedTabId": "main",
+  "docsByTab": {
+    "main": {
+      "nodes": {
+        "start": {
+          "id": "start",
+          "type": "Oval",
+          "text": "start",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "input_F1",
+          "selected": false,
+          "running": false
+        },
+        "input_F1": {
+          "id": "input_F1",
+          "type": "Parallelogram",
+          "text": "F1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "input_N1",
+          "selected": false,
+          "running": false,
+          "ioKind": "Input",
+          "prompt": "Enter number of edges (E)"
+        },
+        "input_N1": {
+          "id": "input_N1",
+          "type": "Parallelogram",
+          "text": "N1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "input_G1",
+          "selected": false,
+          "running": false,
+          "ioKind": "Input",
+          "prompt": "Enter number of nodes (N)"
+        },
+        "input_G1": {
+          "id": "input_G1",
+          "type": "Parallelogram",
+          "text": "G1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "assign_complexity",
+          "selected": false,
+          "running": false,
+          "ioKind": "Input",
+          "prompt": "Enter number of predicate nodes (P)"
+        },
+        "assign_complexity": {
+          "id": "assign_complexity",
+          "type": "Rectangle",
+          "text": "Complexity := F1 - N1 + G1",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "output_complexity",
+          "selected": false,
+          "running": false,
+          "kind": "Assignment"
+        },
+        "output_complexity": {
+          "id": "output_complexity",
+          "type": "Parallelogram",
+          "text": "Complexity",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": "end",
+          "selected": false,
+          "running": false,
+          "ioKind": "Output",
+          "newLine": true
+        },
+        "end": {
+          "id": "end",
+          "type": "Oval",
+          "text": "end",
+          "H": 60,
+          "W": 90,
+          "X": 0,
+          "Y": 0,
+          "FP": {
+            "left": 0,
+            "right": 0,
+            "height": 0
+          },
+          "successorId": null,
+          "selected": false,
+          "running": false
+        }
+      },
+      "startId": "start",
+      "endId": "end"
+    }
+  }
+}
