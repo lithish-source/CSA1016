@@ -1,0 +1,31 @@
+name: Flask CI/CD
+
+on:
+  push:
+    branches:
+      - module-2
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: flask-cicd
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        working-directory: flask-cicd
+        run: pytest
+
+      - name: Build Docker image
+        working-directory: flask-cicd
+        run: docker build -t flask-cicd .
